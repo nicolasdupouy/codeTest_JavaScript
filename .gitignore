@@ -1,0 +1,10 @@
+# Generic files to ignore :
+# -------------------------
+# - Apple temp
+.DS_Store
+
+
+# Languages :
+# -----------
+# - [Node.JS]
+node_modules/
