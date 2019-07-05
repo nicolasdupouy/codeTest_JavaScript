@@ -10,3 +10,4 @@ USER node
 ENV PORT 3000
 
 CMD npm start
+EXPOSE 3000
