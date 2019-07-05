@@ -8,3 +8,9 @@
 # -----------
 # - [Node.JS]
 node_modules/
+package-lock.json
+
+# IDE :
+# -----
+# - [IntelliJ]
+.idea/
