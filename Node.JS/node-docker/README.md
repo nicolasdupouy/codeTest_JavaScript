@@ -1,30 +1,52 @@
 # README
 
-## Build and run
-### Build the Docker image
+## Docker
+
+### Build, run and test the image
+
     docker build --tag=nicolasdupouy/node-docker:version1 .
-
-### Run the Docker image
     docker run -p 9000:3000 nicolasdupouy/node-docker:version1
-
-### Test connection
     curl localhost:9000
 
 ---------------------------
-## Manage container
-### Get Container ID
+
+### Manage container
+
+#### Get Container ID
+
     docker container ls
 
-### Connect
+#### Connect
+
     docker exec -it <containerId> /bin/bash
 
-### Stop it
+#### Stop it
+
     docker stop <containerId>
 
 ---------------------------
-## Docker hub
-### Login
+
+### Docker Hub
+
+#### Login
+
     docker login
-### Tag the image and push it
+
+#### Tag the image and push it
+
     docker tag nicolasdupouy/node-docker nicolasdupouy/node-docker:version1
     docker push nicolasdupouy/node-docker:version1
+
+---------------------------
+
+## Using Docker compose
+
+### Build and run local build
+
+    docker-compose -f docker-compose_LOCAL.yml build
+    docker-compose -f docker-compose_LOCAL.yml up
+
+### Build and run the image pushed to the Docker Hub
+
+    docker-compose build
+    docker-compose up
