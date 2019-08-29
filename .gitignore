@@ -1,3 +1,9 @@
+# IDE :
+# -----
+# - [IntelliJ]
+*.iml
+.idea/
+
 # Generic files to ignore :
 # -------------------------
 # - Apple temp
@@ -6,5 +12,6 @@
 
 # Languages :
 # -----------
-# - [Node.JS]
+# - [Node.js]
+package-lock.json
 node_modules/
