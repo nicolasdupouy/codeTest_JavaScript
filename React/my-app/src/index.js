@@ -8,6 +8,16 @@ function formatDate(date) {
   return date.toLocaleDateString();
 }
 
+class UserInfo extends React.Component {
+  render() {
+    return  <div className="UserInfo">
+              <Avatar user={this.props.user} />
+              <div className="UserInfo-name">
+                {this.props.user.name}
+              </div>
+            </div>
+  }
+}
 class Avatar extends React.Component {
   render() {
      return <img className="Avatar"
@@ -20,12 +30,7 @@ class Avatar extends React.Component {
 function Comment(props) {
   return (
     <div className="Comment">
-      <div className="UserInfo">
-        <Avatar user={props.author} />
-        <div className="UserInfo-name">
-          {props.author.name}
-        </div>
-      </div>
+      <UserInfo user={props.author} />
       <div className="Comment-text">
         {props.text}
       </div>
