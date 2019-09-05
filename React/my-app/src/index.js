@@ -64,7 +64,26 @@ class Greeting extends React.Component {
     }
 }
 
+function Mailbox(props) {
+  const unreadMessages = props.unreadMessages;
+  return (
+    <div>
+      <h1>Hello!</h1>
+      {unreadMessages.length > 0 &&
+        <h2>
+          You have {unreadMessages.length} unread messages.
+        </h2>
+      }
+    </div>
+  );
+}
+
+const messages = ['message 1', 'message 3', 'message 3'];
+
 ReactDOM.render(
-    <LoginControl />, 
+    <div>
+        <LoginControl />
+        <Mailbox unreadMessages={messages} />
+    </div>,
     document.getElementById('root')
 );
