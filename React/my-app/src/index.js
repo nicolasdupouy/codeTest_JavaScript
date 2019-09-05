@@ -78,12 +78,55 @@ function Mailbox(props) {
   );
 }
 
-const messages = ['message 1', 'message 3', 'message 3'];
+class WarningBanner extends React.Component {
+    render() {
+        if (this.props.hideWarning) {
+            return null;
+        }
 
+        return (
+            <div className="warning">
+                Warning !
+            </div>
+        )
+    }
+}
+
+class Page extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {showWarning: true}
+
+        this.toogleWarning = this.toogleWarning.bind(this);
+    }
+
+    toogleWarning() {
+        this.setState({
+            showWarning: !this.state.showWarning
+        })
+    }
+
+    render() {
+        return (
+            <div>
+                <WarningBanner hideWarning={!this.state.showWarning} />
+                <button onClick={this.toogleWarning}>
+                    {this.state.showWarning ? 'Hide warning': 'Show warning'}
+                </button>
+            </div>
+        );
+    }
+}
+
+
+const messages = ['message 1', 'message 3', 'message 3'];
 ReactDOM.render(
     <div>
         <LoginControl />
+        <hr />
         <Mailbox unreadMessages={messages} />
+        <hr />
+        <Page />
     </div>,
     document.getElementById('root')
 );
