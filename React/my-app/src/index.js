@@ -27,7 +27,32 @@ class WelcomeDialog extends React.Component {
     }
 }
 
+function SplitPane(props) {
+  return (
+    <div className="SplitPane">
+      <div className="SplitPane-left">
+        {props.left}
+      </div>
+      <div className="SplitPane-right">
+        {props.right}
+      </div>
+    </div>
+  );
+}
+
 ReactDOM.render(
-    <WelcomeDialog />,
+    <div>
+        <WelcomeDialog />
+        <SplitPane
+            left={
+                //<Contacts />
+                'Contacts'
+            }
+            right={
+                //<Chat />
+                'Chat'
+            }
+        />
+    </div>,
     document.getElementById('root')
 );
