@@ -9,14 +9,8 @@
 # - Apple temp
 .DS_Store
 
-
 # Languages :
 # -----------
 # - [Node.js]
 package-lock.json
-node_modules/package-lock.json
-
-# IDE :
-# -----
-# - [IntelliJ]
-.idea/
+node_modules/
