@@ -12,17 +12,28 @@ class FancyBorder extends React.Component {
     }
 }
 
-class WelcomeDialog extends React.Component {
+class Dialog extends React.Component {
     render() {
         return (
             <FancyBorder color="blue">
                 <h1 className="Dialog-title">
-                    Welcome
+                    {this.props.title}
                 </h1>
                 <p className="Dialog-message">
-                    Thank you for visiting our spacecraft!
+                    {this.props.message}
                 </p>
             </FancyBorder>
+        );
+    }
+}
+
+class WelcomeDialog extends React.Component {
+    render() {
+        return (
+            <Dialog
+            title="Welcome"
+            message="Thank you for visiting our spacecraft!" />
+
         );
     }
 }
